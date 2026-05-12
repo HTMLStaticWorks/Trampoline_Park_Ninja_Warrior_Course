@@ -1,41 +1,150 @@
-/* Dark Mode Overrides */
+/* Dark Mode Overrides - Comprehensive System */
 body.dark-mode {
     --bg-light: #0a0a0a;
     --text-dark: #ffffff;
     --glass-bg: rgba(255, 255, 255, 0.05);
+    background-color: #0a0a0a !important;
+    color: #ffffff !important;
 }
 
-body.dark-mode .card {
-    background: #1a1a1a;
-    border: 1px solid rgba(255,255,255,0.1);
+/* Force all sections (except hero areas) to turn dark */
+body.dark-mode section.section-padding,
+body.dark-mode .jump-zone-section,
+body.dark-mode .ninja-course-section,
+body.dark-mode .elite-amenities-section,
+body.dark-mode .schedule-container {
+    background: #0a0a0a !important;
+    color: #ffffff !important;
 }
 
-body.dark-mode .card-body p {
-    color: #bbb;
+/* Overrides for containers and cards that are usually light */
+body.dark-mode .card,
+body.dark-mode .pricing-card,
+body.dark-mode .benefit-card,
+body.dark-mode .glass-card,
+body.dark-mode .course-card,
+body.dark-mode .timeline-content,
+body.dark-mode .contact-form-wrapper {
+    background: #151515 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
 }
 
-body.dark-mode .section-title h2 {
-    color: var(--text-white);
+/* Card text color adjustment */
+body.dark-mode .card-body p,
+body.dark-mode .pricing-card p,
+body.dark-mode .benefit-card p,
+body.dark-mode .card p,
+body.dark-mode .timeline-content p {
+    color: #bbbbbb !important;
+}
+
+/* FAQ Section Overrides */
+body.dark-mode .faq-item {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .faq-question {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .faq-answer {
+    background: #111111 !important;
+    color: #aaaaaa !important;
+}
+
+/* Override any element with an inline light background */
+body.dark-mode [style*="background: #fff"],
+body.dark-mode [style*="background: white"],
+body.dark-mode [style*="background: #f"],
+body.dark-mode [style*="background:#f"],
+body.dark-mode [style*="background: #e"],
+body.dark-mode [style*="background:#e"] {
+    background-color: #0a0a0a !important;
+    color: #ffffff !important;
+}
+
+/* Navigation & Sticky Header */
+body.dark-mode header.sticky {
+    background: rgba(0, 0, 0, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .navbar .nav-links a {
-    color: var(--text-white);
+    color: #ffffff !important;
 }
 
-body.dark-mode header.sticky {
-    background: rgba(0,0,0,0.95);
+/* Typography Consistency */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4,
+body.dark-mode .section-title h2 {
+    color: #ffffff !important;
 }
 
-body.dark-mode .btn-outline {
-    border-color: var(--primary-blue);
-    color: var(--primary-blue);
+body.dark-mode .auth-logo h2 {
+    color: var(--primary-blue) !important;
 }
 
-body.dark-mode .btn-outline:hover {
-    background: var(--primary-blue);
-    color: var(--bg-dark);
+body.dark-mode p,
+body.dark-mode span:not(.btn):not(.course-tag):not(.logo-text) {
+    color: #cccccc !important;
+}
+
+body.dark-mode .logo span,
+body.dark-mode .logo-text {
+    color: var(--primary-blue) !important;
+}
+
+/* Pricing Elements */
+body.dark-mode .price {
+    color: #ffffff !important;
+}
+
+body.dark-mode .price span {
+    color: #777777 !important;
+}
+
+/* Footer Overrides */
+body.dark-mode footer {
+    background: #050505 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 body.dark-mode .footer-bottom {
-    border-top-color: rgba(255,255,255,0.05);
+    background: transparent !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode .footer-links h4 {
+    color: var(--primary-orange) !important;
+}
+
+body.dark-mode .footer-links ul li,
+body.dark-mode .footer-links ul li a {
+    color: #888888 !important;
+}
+
+body.dark-mode .footer-links ul li a:hover {
+    color: var(--primary-blue) !important;
+}
+
+/* Form Elements */
+body.dark-mode input, 
+body.dark-mode textarea, 
+body.dark-mode select {
+    background: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: #ffffff !important;
+}
+
+/* Tables / Schedules */
+body.dark-mode .schedule-row {
+    border-bottom-color: #222 !important;
+}
+
+body.dark-mode .schedule-header {
+    background: #111 !important;
 }

@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Experience | Trampoline Park & Ninja Warrior Course</title>
-    <meta name="description" content="Discover the elite side of adventure. Premium training, VIP memberships, and high-tech park facilities.">
-    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description"
+        content="Discover the elite side of adventure. Premium training, VIP memberships, and high-tech park facilities.">
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Roboto:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
-    
+
     <style>
         /* Home 2 Specific Styles */
         .hero-2 {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/ninja-warrior.png') center/cover no-repeat;
         }
 
         .stats-section {
@@ -104,15 +109,65 @@
             margin-top: 40px;
         }
 
-        .booking-form-mini input, .booking-form-mini select {
+        .booking-form-mini input,
+        .booking-form-mini select {
             padding: 15px;
             border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
+        }
+
+        /* FAQ Styles */
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            margin: 0;
+            text-transform: none;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-question span {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            transition: var(--transition-smooth);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            color: #777;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-question h3 {
+            color: var(--primary-blue);
+        }
+
+        .faq-item.active .faq-question span {
+            transform: rotate(45deg);
+            color: var(--primary-orange);
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header / Navbar -->
@@ -120,7 +175,8 @@
         <div class="container">
             <nav class="navbar">
                 <a href="index.html" class="logo">
-                    <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                    <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
                         <path d="M12 2l9 4.5v11L12 22l-9-4.5v-11L12 2z"></path>
                         <path d="M8 8h8"></path>
                         <path d="M12 8v8"></path>
@@ -135,13 +191,24 @@
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="courses.html">Courses</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li class="mobile-only-nav">
+                        <div class="mobile-nav-actions">
+                            <button class="theme-switch theme-toggle">🌙</button>
+                            <button class="theme-switch rtl-toggle">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17H4l4-4"></path><path d="M4 7h16l-4 4"></path></svg>
+                            </button>
+                            <a href="login.html" class="btn btn-primary">Login</a>
+                        </div>
+                    </li>
                 </ul>
                 <div class="nav-actions">
-                    <button id="theme-toggle" class="theme-switch">🌙</button>
-                    <button id="rtl-toggle" class="theme-switch">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17H4l4-4"></path><path d="M4 7h16l-4 4"></path></svg>
-                    </button>
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <div class="nav-buttons-group">
+                        <button class="theme-switch theme-toggle">🌙</button>
+                        <button class="theme-switch rtl-toggle">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17H4l4-4"></path><path d="M4 7h16l-4 4"></path></svg>
+                        </button>
+                        <a href="login.html" class="btn btn-primary">Login</a>
+                    </div>
                     <div class="hamburger">
                         <span></span>
                         <span></span>
@@ -154,13 +221,17 @@
 
     <!-- 1. Premium Hero Slider -->
     <section class="hero hero-2">
-        <div class="hero-overlay" style="background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);"></div>
-        <div class="hero-content" style="text-align: left; margin-left: 5%;">
-            <h1 class="reveal" style="font-size: 5rem; text-align: left;">ELITE TRAINING.<br><span style="color: var(--primary-orange); -webkit-text-fill-color: initial;">MASTER THE FLOW.</span></h1>
-            <p class="reveal" style="font-size: 1.3rem; margin-bottom: 40px; color: #ddd; max-width: 600px;">Elevate your game with world-class facilities designed for professional athletes and adventure seekers alike.</p>
-            <div class="flex gap-20 reveal">
+        <div class="hero-overlay" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));"></div>
+        <div class="hero-content" style="text-align: center; margin: 0 auto;">
+            <h1 class="reveal" style="font-size: 5rem;">ELITE TRAINING.<br><span
+                    style="color: var(--primary-orange); -webkit-text-fill-color: initial;">MASTER THE FLOW.</span></h1>
+            <p class="reveal" style="font-size: 1.3rem; margin: 0 auto 40px; color: #ddd; max-width: 800px;">Elevate
+                your game with world-class facilities designed for professional athletes and adventure seekers alike.
+            </p>
+            <div class="flex reveal" style="gap: 25px; justify-content: center;">
                 <a href="pricing.html" class="btn btn-primary">Get VIP Access</a>
-                <a href="services.html" class="btn btn-outline" style="color: white; border-color: white;">View Programs</a>
+                <a href="services.html" class="btn btn-outline" style="color: white; border-color: white;">View
+                    Programs</a>
             </div>
         </div>
     </section>
@@ -170,19 +241,19 @@
         <div class="container">
             <div class="card-grid grid-4">
                 <div class="stat-item reveal">
-                    <h2 class="counter" data-target="50000">0</h2>
+                    <h2 class="stat-number"><span class="counter" data-target="50000">0</span>+</h2>
                     <p>Annual Visitors</p>
                 </div>
                 <div class="stat-item reveal">
-                    <h2 class="counter" data-target="1200">0</h2>
+                    <h2 class="stat-number"><span class="counter" data-target="1200">0</span>+</h2>
                     <p>Monthly Sessions</p>
                 </div>
                 <div class="stat-item reveal">
-                    <h2 class="counter" data-target="350">0</h2>
+                    <h2 class="stat-number"><span class="counter" data-target="350">0</span>+</h2>
                     <p>Events Hosted</p>
                 </div>
                 <div class="stat-item reveal">
-                    <h2 class="counter" data-target="100">0</h2>
+                    <h2 class="stat-number"><span class="counter" data-target="100">0</span>%</h2>
                     <p>Safety Rating %</p>
                 </div>
             </div>
@@ -196,10 +267,10 @@
                 <h2>Elite Warrior Programs</h2>
                 <p>Structured training for every skill level, from beginner to pro.</p>
             </div>
-            <div class="card-grid grid-4">
-                <div class="card reveal" style="border: none; background: #fdfdfd;">
+            <div class="card-grid grid-4" style="gap: 0;">
+                <div class="card reveal" style="border: none; background: #fdfdfd; border-radius: 0;">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=600&auto=format&fit=crop" alt="Kids Training">
+                        <img src="assets/images/Junior Ninjas.png" alt="Junior Ninjas">
                     </div>
                     <div class="card-body">
                         <span style="color: var(--primary-blue); font-weight: 800; font-size: 0.8rem;">AGES 5-12</span>
@@ -208,9 +279,9 @@
                         <a href="services-details.html" class="btn btn-outline">Join Program</a>
                     </div>
                 </div>
-                <div class="card reveal" style="border: none; background: #fdfdfd;">
+                <div class="card reveal" style="border: none; background: #fdfdfd; border-radius: 0;">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1549476464-37392f71752a?q=80&w=600&auto=format&fit=crop" alt="Teen Training">
+                        <img src="assets/images/Teen Challengers.png" alt="Teen Challengers">
                     </div>
                     <div class="card-body">
                         <span style="color: var(--primary-blue); font-weight: 800; font-size: 0.8rem;">AGES 13-17</span>
@@ -219,9 +290,9 @@
                         <a href="services-details.html" class="btn btn-outline">Join Program</a>
                     </div>
                 </div>
-                <div class="card reveal" style="border: none; background: #fdfdfd;">
+                <div class="card reveal" style="border: none; background: #fdfdfd; border-radius: 0;">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop" alt="Adult Warrior">
+                        <img src="assets/images/Pro Warrior Academy.png" alt="Pro Warrior Academy">
                     </div>
                     <div class="card-body">
                         <span style="color: var(--primary-blue); font-weight: 800; font-size: 0.8rem;">ADULTS</span>
@@ -230,9 +301,9 @@
                         <a href="services-details.html" class="btn btn-outline">Join Program</a>
                     </div>
                 </div>
-                <div class="card reveal" style="border: none; background: #fdfdfd;">
+                <div class="card reveal" style="border: none; background: #fdfdfd; border-radius: 0;">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=600&auto=format&fit=crop" alt="Fitness Bootcamp">
+                        <img src="assets/images/Ninja Bootcamp.png" alt="Ninja Bootcamp">
                     </div>
                     <div class="card-body">
                         <span style="color: var(--primary-blue); font-weight: 800; font-size: 0.8rem;">ALL AGES</span>
@@ -245,101 +316,237 @@
         </div>
     </section>
 
-    <!-- 4. Interactive Park Gallery -->
-    <section class="section-padding" style="background: #fafafa;">
+    <!-- 4. Design & Technology Section -->
+    <section class="section-padding extreme-flow-section" style="background: #000; color: white; overflow: hidden;">
         <div class="container">
-            <div class="section-title">
-                <h2>Inside the Arena</h2>
-                <p>A visual journey through our state-of-the-art facility.</p>
-            </div>
-            <div class="gallery-grid reveal">
-                <div class="gallery-item" style="grid-row: span 2;"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600&auto=format&fit=crop" alt="Gallery"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518611012118-296072bb5604?q=80&w=600&auto=format&fit=crop" alt="Gallery"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=600&auto=format&fit=crop" alt="Gallery"></div>
-                <div class="gallery-item" style="grid-column: span 2;"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop" alt="Gallery"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Membership & Rewards -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Membership Tiers</h2>
-                <p>Exclusive benefits for our most dedicated warriors.</p>
-            </div>
-            <div class="card-grid grid-4">
-                <div class="membership-card reveal">
-                    <h3>Basic</h3>
-                    <h2 style="font-size: 3rem; margin: 20px 0;">$29<span style="font-size: 1rem; color: #888;">/mo</span></h2>
-                    <ul style="margin-bottom: 30px; text-align: left;">
-                        <li>✓ 2 Sessions per week</li>
-                        <li>✓ 10% Off Merch</li>
-                        <li>✓ Free Grip Socks</li>
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div class="reveal">
+                    <span style="color: var(--primary-orange); font-weight: 800; letter-spacing: 2px;">ARCHITECTURE & SAFETY</span>
+                    <h2 style="font-size: 3.5rem; margin: 20px 0; color: white;">Engineered for <br><span
+                            style="color: var(--primary-blue);">Extreme Flow.</span></h2>
+                    <p style="color: #aaa; font-size: 1.1rem; margin-bottom: 30px; line-height: 1.8;">Our arena is a
+                        masterpiece of sports engineering. We utilize advanced impact-attenuation technology and
+                        professional-grade materials to create an environment that minimizes risk while maximizing
+                        performance potential.</p>
+                    <ul style="margin-bottom: 40px;">
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Olympic-Spec Trampoline Beds</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>High-Density Safety Foam Pit Systems</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-blue)"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Precision-Machined Ninja Obstacles</span>
+                        </li>
                     </ul>
-                    <a href="pricing.html" class="btn btn-outline">Choose Plan</a>
+                    <a href="about.html" class="btn btn-primary">Discover Our Tech</a>
                 </div>
-                <div class="membership-card featured reveal">
-                    <span style="background: var(--primary-orange); color: white; padding: 5px 15px; border-radius: 20px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);">POPULAR</span>
-                    <h3>Warrior</h3>
-                    <h2 style="font-size: 3rem; margin: 20px 0;">$59<span style="font-size: 1rem; color: #888;">/mo</span></h2>
-                    <ul style="margin-bottom: 30px; text-align: left;">
-                        <li>✓ Unlimited Sessions</li>
-                        <li>✓ 20% Off Merch</li>
-                        <li>✓ 1 Guest Pass / Month</li>
-                        <li>✓ Priority Booking</li>
-                    </ul>
-                    <a href="pricing.html" class="btn btn-secondary">Choose Plan</a>
-                </div>
-                <div class="membership-card reveal">
-                    <h3>Elite</h3>
-                    <h2 style="font-size: 3rem; margin: 20px 0;">$99<span style="font-size: 1rem; color: #888;">/mo</span></h2>
-                    <ul style="margin-bottom: 30px; text-align: left;">
-                        <li>✓ All Warrior Benefits</li>
-                        <li>✓ 2 Personal Trainer Sessions</li>
-                        <li>✓ VIP Lounge Access</li>
-                        <li>✓ Free Event Entry</li>
-                    </ul>
-                    <a href="pricing.html" class="btn btn-outline">Choose Plan</a>
-                </div>
-                <div class="membership-card reveal">
-                    <h3>Family</h3>
-                    <h2 style="font-size: 3rem; margin: 20px 0;">$149<span style="font-size: 1rem; color: #888;">/mo</span></h2>
-                    <ul style="margin-bottom: 30px; text-align: left;">
-                        <li>✓ Up to 4 Family Members</li>
-                        <li>✓ Unlimited Sessions</li>
-                        <li>✓ 25% Off Parties</li>
-                        <li>✓ Free Snacks & Drinks</li>
-                    </ul>
-                    <a href="pricing.html" class="btn btn-outline">Choose Plan</a>
+                <div class="reveal" style="position: relative; margin: 20px 0;">
+                    <div class="decorative-border orange-border"></div>
+                    <img src="assets/images/Spider Wall.png" alt="Engineering"
+                        style="border-radius: 30px; position: relative; z-index: 1; box-shadow: 0 0 50px rgba(0, 242, 255, 0.2); width: 100%;">
+                    <div class="decorative-border blue-border"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Online Booking CTA -->
-    <section class="section-padding">
+    <!-- 5. The Warrior Journey (Non-Card Section) -->
+    <section class="section-padding" style="background: #fff; position: relative;">
         <div class="container">
-            <div class="booking-preview reveal">
-                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; position: relative; z-index: 1;">
-                    <div>
-                        <h2 style="font-size: 3.5rem; margin-bottom: 20px;">Ready to <br><span style="color: var(--primary-blue);">Start?</span></h2>
-                        <p style="color: #aaa; margin-bottom: 30px;">Quickly check availability and secure your spot in the arena. No hidden fees, instant confirmation.</p>
-                        <div class="booking-form-mini">
-                            <input type="date">
-                            <select>
-                                <option>Select Zone</option>
-                                <option>Trampoline</option>
-                                <option>Ninja Course</option>
-                            </select>
-                            <input type="number" placeholder="People">
-                            <button class="btn btn-primary">Check</button>
+            <div class="section-title">
+                <h2>The Warrior Path</h2>
+                <p>Your journey from beginner to legend starts here.</p>
+            </div>
+
+            <div class="journey-container"
+                style="display: flex; justify-content: space-between; align-items: flex-start; gap: 50px; margin-top: 80px; position: relative;">
+                <!-- Connecting Line -->
+                <div class="journey-line"
+                    style="position: absolute; top: 50px; left: 10%; right: 10%; height: 2px; background: linear-gradient(to right, var(--primary-blue), var(--primary-orange)); z-index: 0; opacity: 0.3;">
+                </div>
+
+                <!-- Step 1 -->
+                <div class="reveal" style="flex: 1; text-align: center; position: relative; z-index: 1;">
+                    <div
+                        style="width: 100px; height: 100px; background: var(--bg-dark); color: var(--primary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 900; margin: 0 auto 30px; border: 4px solid var(--primary-blue); box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);">
+                        1</div>
+                    <h3 style="margin-bottom: 15px;">Initiate</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Choose your zone and gear up with our professional grip
+                        socks and safety orientation.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="reveal" style="flex: 1; text-align: center; position: relative; z-index: 1;">
+                    <div
+                        style="width: 100px; height: 100px; background: var(--bg-dark); color: var(--primary-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 900; margin: 0 auto 30px; border: 4px solid var(--primary-orange); box-shadow: 0 0 30px rgba(255, 95, 0, 0.3);">
+                        2</div>
+                    <h3 style="margin-bottom: 15px;">Engage</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Master the obstacles with guided tips from our on-floor
+                        pro athletes and ninja masters.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="reveal" style="flex: 1; text-align: center; position: relative; z-index: 1;">
+                    <div
+                        style="width: 100px; height: 100px; background: var(--bg-dark); color: var(--accent-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 900; margin: 0 auto 30px; border: 4px solid var(--accent-purple); box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);">
+                        3</div>
+                    <h3 style="margin-bottom: 15px;">Ascend</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Complete the course, ring the bell, and join our elite
+                        community of high-flyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Newsletter / Community Section (Non-Card) -->
+    <section class="section-padding warrior-squad-section"
+        style="background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('assets/images/home1-hero.png') center/cover fixed; color: white;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 3.5rem; margin-bottom: 20px;">Join the <span
+                        style="color: var(--primary-blue);">Warrior Squad</span></h2>
+                <p style="color: #ccc; font-size: 1.2rem; margin-bottom: 40px;">Get exclusive access to midnight
+                    sessions, pro-tips, and member-only events. No spam, just pure adrenaline.</p>
+                <form
+                    style="display: flex; gap: 15px; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 60px; border: 1px solid rgba(255,255,255,0.2);">
+                    <input type="email" placeholder="Enter your email address"
+                        style="flex: 1; background: transparent; border: none; color: white; padding: 0 30px; font-size: 1.1rem; outline: none;">
+                    <button class="btn btn-primary" style="padding: 15px 40px;">Get Notified</button>
+                </form>
+                <p style="margin-top: 20px; font-size: 0.8rem; color: #777;">By subscribing, you agree to our Terms of
+                    Service and Privacy Policy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Our Heritage & Mission (Non-Card Section) -->
+    <section class="section-padding heritage-section" style="background: #fff; overflow: hidden;">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;">
+                <div class="reveal" style="position: relative;">
+                    <div style="width: 100%; height: 500px; background: #eee; border-radius: 40px; overflow: hidden;">
+                        <img src="assets/images/Elite Academy2.png" alt="Mission"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div
+                        style="position: absolute; bottom: -40px; right: -40px; background: var(--primary-blue); color: white; padding: 40px; border-radius: 30px; max-width: 300px; box-shadow: 0 20px 50px rgba(0, 242, 255, 0.3);">
+                        <h2 style="font-size: 3rem; margin: 0; line-height: 1;">15+</h2>
+                        <p style="margin: 10px 0 0; font-weight: 800; text-transform: uppercase;">Years of Excellence in
+                            Adventure Sports</p>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <span style="color: var(--primary-orange); font-weight: 800; letter-spacing: 2px;">OUR HERITAGE</span>
+                    <h2 style="font-size: 3.5rem; margin: 20px 0; line-height: 1.1;">Building the <br><span
+                            style="color: var(--primary-blue);">Next Generation.</span></h2>
+                    <p style="color: #666; font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">Founded by
+                        professional athletes, our mission has always been to provide a world-class training environment
+                        that balances extreme challenge with absolute safety. We believe everyone has a warrior within.
+                    </p>
+                    <div style="display: flex; gap: 30px;">
+                        <div style="flex: 1;">
+                            <h4 style="color: var(--primary-orange); margin-bottom: 10px;">Passion First</h4>
+                            <p style="font-size: 0.9rem; color: #888;">We cultivate a community where passion for
+                                movement is celebrated every single day.</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="color: var(--primary-orange); margin-bottom: 10px;">Safety Always</h4>
+                            <p style="font-size: 0.9rem; color: #888;">Our safety protocols exceed international
+                                standards, ensuring peace of mind for all.</p>
                         </div>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 10rem; color: rgba(255, 255, 255, 0.05); position: absolute; top: 0; right: 0;">BOOK</div>
-                        <img src="https://images.unsplash.com/photo-1551632432-c735e8299bc1?q=80&w=800&auto=format&fit=crop" alt="Booking" style="border-radius: 20px; box-shadow: 0 0 50px rgba(0, 242, 255, 0.3);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Live Arena Feed & Records (Non-Card Section) -->
+    <section class="section-padding live-arena-section"
+        style="background: var(--bg-dark); color: white; border-top: 1px solid rgba(0, 242, 255, 0.2);">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Live Arena <span style="color: var(--primary-blue);">Dynamics</span></h2>
+                <p style="color: #888;">Real-time performance data and record-breaking moments from today's sessions.</p>
+            </div>
+
+            <div class="grid" style="grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: center;">
+                <div class="reveal">
+                    <div
+                        style="background: rgba(255,255,255,0.03); border-radius: 40px; padding: 50px; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;">
+                        <div
+                            style="position: absolute; top: 30px; right: 30px; width: 12px; height: 12px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 15px #00ff00;">
+                        </div>
+                        <h3 style="margin-bottom: 40px; font-size: 1.8rem; text-transform: none;">Today's Record Breakers
+                        </h3>
+
+                        <div style="margin-bottom: 35px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                                <span style="font-weight: 600;">Warped Wall Completion</span>
+                                <span style="color: var(--primary-blue); font-family: 'Roboto', sans-serif;">4.2s</span>
+                            </div>
+                            <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
+                                <div
+                                    style="width: 85%; height: 100%; background: var(--primary-blue); border-radius: 3px; box-shadow: 0 0 15px var(--primary-blue);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 35px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                                <span style="font-weight: 600;">Salmon Ladder Ascent</span>
+                                <span style="color: var(--primary-orange); font-family: 'Roboto', sans-serif;">12.5s</span>
+                            </div>
+                            <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
+                                <div
+                                    style="width: 70%; height: 100%; background: var(--primary-orange); border-radius: 3px; box-shadow: 0 0 15px var(--primary-orange);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                                <span style="font-weight: 600;">Total Calories Burned (Daily)</span>
+                                <span
+                                    style="color: var(--accent-purple); font-family: 'Roboto', sans-serif;">425K+</span>
+                            </div>
+                            <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
+                                <div
+                                    style="width: 92%; height: 100%; background: var(--accent-purple); border-radius: 3px; box-shadow: 0 0 15px var(--accent-purple);">
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                <div class="reveal">
+                    <div style="margin-bottom: 50px;">
+                        <h2 style="font-size: 6rem; color: var(--primary-blue); line-height: 1; margin: 0; font-weight: 900;"
+                            class="counter" data-target="82">0</h2>
+                        <span style="font-size: 2rem; color: var(--primary-blue);">%</span>
+                        <p style="color: #aaa; font-size: 1.1rem; margin-top: 10px;">Current Arena Occupancy</p>
+                    </div>
+                    <div style="margin-bottom: 50px;">
+                        <h2 style="font-size: 6rem; color: var(--primary-orange); line-height: 1; margin: 0; font-weight: 900;"
+                            class="counter" data-target="18">0</h2>
+                        <span style="font-size: 2rem; color: var(--primary-orange);">+</span>
+                        <p style="color: #aaa; font-size: 1.1rem; margin-top: 10px;">Active Professional Trainers</p>
+                    </div>
+                    <a href="courses.html" class="btn btn-primary" style="width: 100%; padding: 20px;">Join the Live
+                        Session</a>
                 </div>
             </div>
         </div>
@@ -351,19 +558,47 @@
             <div class="footer-grid">
                 <div class="footer-info">
                     <div class="footer-logo">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00f2ff" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
                             <path d="M12 2l9 4.5v11L12 22l-9-4.5v-11L12 2z"></path>
                             <path d="M8 8h8"></path>
                             <path d="M12 8v8"></path>
                         </svg>
                         <span>TRAMPOLINE & NINJA</span>
                     </div>
-                    <p style="color: #aaa; margin-bottom: 25px;">The world's premier destination for family fun, fitness, and elite ninja obstacle training. Experience the adventure of a lifetime.</p>
+                    <p style="color: #aaa; margin-bottom: 25px;">The world's premier destination for family fun,
+                        fitness, and elite ninja obstacle training. Experience the adventure of a lifetime.</p>
                     <div class="social-icons">
-                        <a href="#">F</a>
-                        <a href="#">I</a>
-                        <a href="#">X</a>
-                        <a href="#">Y</a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2C5.12 19.54 12 19.54 12 19.54s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 2.78 2.78 0 0 0-.46-5.33z">
+                                </path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="X">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4l11.733 16h4.267l-11.733-16z"></path>
+                                <path d="M4 20l6.768-6.768m2.464-2.464l6.768-6.768"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -374,7 +609,6 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="courses.html">Courses</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -389,25 +623,34 @@
                 <div class="footer-links">
                     <h4>Opening Hours</h4>
                     <ul>
-                        <li style="color: #aaa; display: flex; justify-content: space-between;"><span>Mon - Thu:</span> <span>10am - 9pm</span></li>
-                        <li style="color: #aaa; display: flex; justify-content: space-between;"><span>Fri - Sat:</span> <span>9am - 11pm</span></li>
-                        <li style="color: #aaa; display: flex; justify-content: space-between;"><span>Sunday:</span> <span>9am - 8pm</span></li>
+                        <li style="color: #aaa; display: flex; justify-content: space-between;"><span>Mon - Thu:</span>
+                            <span>10am - 9pm</span></li>
+                        <li style="color: #aaa; display: flex; justify-content: space-between;"><span>Fri - Sat:</span>
+                            <span>9am - 11pm</span></li>
+                        <li style="color: #aaa; display: flex; justify-content: space-between;"><span>Sunday:</span>
+                            <span>9am - 8pm</span></li>
                     </ul>
                     <h4 style="margin-top: 30px;">Newsletter</h4>
-                    <form style="display: flex; gap: 10px;">
-                        <input type="email" placeholder="Email" style="padding: 10px; border-radius: 5px; border: none; width: 100%;">
-                        <button class="btn btn-primary" style="padding: 10px 20px;">Go</button>
+                    <form>
+                        <input type="email" placeholder="Email">
+                        <button class="btn btn-primary">Go</button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Trampoline Park & Ninja Warrior Course. All Rights Reserved.</p>
-                <p>Designed with ❤️ for Adventurers.</p>
+                <p>&copy; 2026 Trampoline Park & Ninja Warrior Course. All Rights Reserved. | Designed with ❤️ for
+                    Adventurers.</p>
             </div>
         </div>
     </footer>
 
     <!-- JS Files -->
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to Top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"></path></svg>
+    </button>
+
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Details | Trampoline Park & Ninja Warrior Course</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="description" content="Deep dive into our specific training programs and adventure services.">
     
     <!-- Google Fonts -->
@@ -16,8 +17,8 @@
     
     <style>
         .hero-details {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
-            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/service-hero.png') center/cover no-repeat;
+            height: 60vh;
         }
 
         .details-grid {
@@ -32,6 +33,26 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border-left: 5px solid var(--primary-blue);
+        }
+
+        @media screen and (max-width: 768px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            #service-main-img {
+                height: 300px !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .details-grid {
+                text-align: center;
+            }
+            #service-highlights {
+                padding: 0;
+                list-style: none;
+            }
         }
     </style>
 </head>
@@ -57,13 +78,24 @@
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="courses.html">Courses</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li class="mobile-only-nav">
+                        <div class="mobile-nav-actions">
+                            <button class="theme-switch theme-toggle">🌙</button>
+                            <button class="theme-switch rtl-toggle">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17H4l4-4"></path><path d="M4 7h16l-4 4"></path></svg>
+                            </button>
+                            <a href="login.html" class="btn btn-primary">Login</a>
+                        </div>
+                    </li>
                 </ul>
                 <div class="nav-actions">
-                    <button id="theme-toggle" class="theme-switch">🌙</button>
-                    <button id="rtl-toggle" class="theme-switch">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17H4l4-4"></path><path d="M4 7h16l-4 4"></path></svg>
-                    </button>
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <div class="nav-buttons-group">
+                        <button class="theme-switch theme-toggle">🌙</button>
+                        <button class="theme-switch rtl-toggle">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17H4l4-4"></path><path d="M4 7h16l-4 4"></path></svg>
+                        </button>
+                        <a href="login.html" class="btn btn-primary">Login</a>
+                    </div>
                     <div class="hamburger">
                         <span></span>
                         <span></span>
@@ -78,29 +110,34 @@
     <section class="hero hero-details">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="reveal">PRO NINJA ACADEMY</h1>
-            <p class="reveal">Master the course like a professional athlete.</p>
+            <h1 id="service-hero-title" class="reveal">SERVICE DETAILS</h1>
+            <p id="service-hero-subtitle" class="reveal">Master the course like a professional athlete.</p>
         </div>
     </section>
 
     <!-- 2. Detailed Service Overview -->
-    <section class="section-padding">
+    <section class="section-padding service-details-main">
         <div class="container">
+            <!-- Image moved below hero as requested -->
+            <div class="reveal" style="margin-bottom: 50px;">
+                <img id="service-main-img" src="assets/images/Ninja Intro.png" alt="Service Image" 
+                     style="border-radius: 30px; width: 100%; height: 600px; object-fit: cover; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+            </div>
+
             <div class="details-grid">
                 <div class="reveal">
-                    <h2 style="margin-bottom: 25px;">Elite Obstacle Navigation</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 30px; color: #555;">Our Pro Ninja Academy is designed for those who want to take their skills to the next level. This program focuses on technical proficiency across various obstacles, including the warped wall, salmon ladder, and quintuple steps.</p>
-                    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1200&auto=format&fit=crop" alt="Ninja" style="border-radius: 20px; width: 100%; margin-bottom: 30px;">
-                    <p>Participants will work with certified ninja coaches to improve their upper body strength, core stability, and overall agility. The program is structured into weekly modules, each focusing on a different set of challenges.</p>
+                    <h2 id="service-title" style="margin-bottom: 25px;">Elite Training Programs</h2>
+                    <p id="service-desc-1" style="font-size: 1.1rem; margin-bottom: 30px; color: #555;">Our specialized programs are designed for those who want to take their skills to the next level. This program focuses on technical proficiency and physical excellence.</p>
+                    <p id="service-desc-2">Participants will work with certified coaches to improve their performance across various disciplines. The program is structured into modules focusing on specific challenges and techniques.</p>
                 </div>
                 <div class="reveal">
                     <div class="glass-card" style="background: #111; color: white;">
                         <h3>Program Highlights</h3>
-                        <ul style="margin-top: 20px;">
-                            <li style="margin-bottom: 15px;">⏱️ 2 Hour Sessions</li>
-                            <li style="margin-bottom: 15px;">🏋️ Personal Coaching</li>
-                            <li style="margin-bottom: 15px;">🏆 Monthly Competitions</li>
-                            <li style="margin-bottom: 15px;">👕 Official Academy Gear</li>
+                        <ul id="service-highlights" style="margin-top: 20px;">
+                            <li style="margin-bottom: 15px;">⏱️ 1-2 Hour Sessions</li>
+                            <li style="margin-bottom: 15px;">🏋️ Professional Coaching</li>
+                            <li style="margin-bottom: 15px;">🏆 Skills Assessment</li>
+                            <li style="margin-bottom: 15px;">👕 Official Gear Included</li>
                         </ul>
                         <a href="pricing.html" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Join Now</a>
                     </div>
@@ -108,6 +145,92 @@
             </div>
         </div>
     </section>
+
+    <script>
+        const serviceData = {
+            'open-jump': {
+                heroTitle: 'OPEN JUMP ARENA',
+                heroSubtitle: 'Limitless gravity-defying fun for everyone.',
+                title: 'Ultimate Freedom of Movement',
+                desc1: 'Our Open Jump sessions provide full access to our massive trampoline park. Fly through the air, practice your flips, or simply enjoy the feeling of weightlessness across our interconnected trampolines.',
+                desc2: 'Perfect for all skill levels, from beginners to advanced jumpers looking to refine their aerial skills in a safe, high-energy environment.',
+                img: 'assets/images/Open Jump.png'
+            },
+            'jump-fitness': {
+                heroTitle: 'JUMP FITNESS CLASS',
+                heroSubtitle: 'High-intensity training that feels like a party.',
+                title: 'Burn Calories, Not Just Time',
+                desc1: 'Our Jump Fitness classes are designed to give you a full-body workout using the unique resistance of trampolines. It\'s low-impact but high-intensity, burning up to 1000 calories per session.',
+                desc2: 'Work with our energetic instructors to improve your cardiovascular health, core stability, and overall muscle tone while having the time of your life.',
+                img: 'assets/images/Jump Fitness.png'
+            },
+            'toddler-time': {
+                heroTitle: 'TODDLER TIME',
+                heroSubtitle: 'Safe and fun play for the little warriors.',
+                title: 'Early Development through Play',
+                desc1: 'Toddler Time is a dedicated session where the park is exclusive to our youngest guests. It allows little ones to explore, jump, and play safely without the presence of older children.',
+                desc2: 'These sessions promote motor skill development, balance, and social interaction in a supervised, kid-friendly atmosphere.',
+                img: 'assets/images/Toddler Time.png'
+            },
+            'neon-night': {
+                heroTitle: 'NEON NIGHT JUMP',
+                heroSubtitle: 'When the sun goes down, the lights come up.',
+                title: 'The Ultimate Glow-in-the-Dark Experience',
+                desc1: 'Neon Night Jump transforms our park into a vibrant, glowing playground. With UV lights, live DJ sets, and neon-themed decorations, it\'s the most exciting way to spend your night.',
+                desc2: 'Wear your brightest whites or neon colors and get ready to jump into the most energetic party in the city.',
+                img: 'assets/images/Neon Night Jump.png'
+            },
+            'ninja-intro': {
+                heroTitle: 'NINJA INTRO COURSE',
+                heroSubtitle: 'Begin your journey to becoming a warrior.',
+                title: 'Master the Foundations',
+                desc1: 'Our Ninja Intro course is the perfect starting point for aspiring athletes. We cover the basic techniques for safely navigating obstacles, including proper landing and grip management.',
+                desc2: 'Build the confidence and base strength needed to tackle our more advanced courses under the guidance of our expert coaches.',
+                img: 'assets/images/Ninja Intro.png'
+            },
+            'pro-workshop': {
+                heroTitle: 'PRO NINJA WORKSHOP',
+                heroSubtitle: 'Advanced training for elite competitors.',
+                title: 'Technical Mastery of Obstacles',
+                desc1: 'The Pro Workshop is designed for experienced ninjas looking to master specific, high-difficulty obstacles. We focus on efficiency, speed, and advanced technical skills like lache transitions and wall runs.',
+                desc2: 'Break down complex movements into manageable steps and receive personalized feedback to help you achieve your competitive goals.',
+                img: 'assets/images/Pro Workshop.png'
+            },
+            'parkour-skills': {
+                heroTitle: 'PARKOUR & FREE RUNNING',
+                heroSubtitle: 'The art of efficient movement.',
+                title: 'Flow through the Environment',
+                desc1: 'Our Parkour Skills classes focus on turning the world into your playground. Learn the essentials of vaulting, climbing, and landing as you develop your own unique movement style.',
+                desc2: 'Improve your spatial awareness and functional strength while learning how to navigate any environment with grace and power.',
+                img: 'assets/images/Parkour Skills.png'
+            },
+            'ninja-strength': {
+                heroTitle: 'NINJA STRENGTH & CONDITIONING',
+                heroSubtitle: 'Build the power behind the ninja.',
+                title: 'Targeted Athletic Development',
+                desc1: 'Ninja Strength focuses on the specific muscle groups needed for obstacle mastery. We prioritize grip strength, core stability, and explosive power through functional training methods.',
+                desc2: 'This high-performance conditioning program is the engine that drives your success on the course, ensuring you have the physical capacity to match your skills.',
+                img: 'assets/images/Ninja Strength.png'
+            }
+        };
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceKey = urlParams.get('service');
+            
+            if (serviceKey && serviceData[serviceKey]) {
+                const data = serviceData[serviceKey];
+                document.getElementById('service-hero-title').innerText = data.heroTitle;
+                document.getElementById('service-hero-subtitle').innerText = data.heroSubtitle;
+                document.getElementById('service-title').innerText = data.title;
+                document.getElementById('service-desc-1').innerText = data.desc1;
+                document.getElementById('service-desc-2').innerText = data.desc2;
+                document.getElementById('service-main-img').src = data.img;
+                document.getElementById('service-main-img').alt = data.heroTitle;
+                document.title = data.heroTitle + ' | Trampoline Park & Ninja Warrior Course';
+            }
+        };
+    </script>
 
     <!-- 3. Benefits Section -->
     <section class="section-padding" style="background: #f4f4f4;">
@@ -137,26 +260,7 @@
         </div>
     </section>
 
-    <!-- 4. Safety Standards -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-                <div class="reveal">
-                    <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=800&auto=format&fit=crop" alt="Safety" style="border-radius: 20px;">
-                </div>
-                <div class="reveal">
-                    <h2 style="margin-bottom: 20px;">Unmatched Safety Standards</h2>
-                    <p style="margin-bottom: 25px;">Safety is the foundation of everything we do. Before participating in the Pro Ninja Academy, all students must undergo a safety orientation and skill assessment.</p>
-                    <ul style="list-style: disc; margin-left: 20px;">
-                        <li>Professional-grade safety padding</li>
-                        <li>High-density block foam pits</li>
-                        <li>Certified First Aid staff on-site</li>
-                        <li>Regular equipment stress testing</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- 5. Booking CTA -->
     <section class="section-padding" style="background: linear-gradient(135deg, var(--bg-dark), #222); color: white;">
@@ -185,10 +289,18 @@
                     </div>
                     <p style="color: #aaa; margin-bottom: 25px;">The world's premier destination for family fun, fitness, and elite ninja obstacle training. Experience the adventure of a lifetime.</p>
                     <div class="social-icons">
-                        <a href="#">F</a>
-                        <a href="#">I</a>
-                        <a href="#">X</a>
-                        <a href="#">Y</a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2C5.12 19.54 12 19.54 12 19.54s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 2.78 2.78 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                        <a href="#" aria-label="X">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16z"></path><path d="M4 20l6.768-6.768m2.464-2.464l6.768-6.768"></path></svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -199,7 +311,6 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="courses.html">Courses</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -219,20 +330,24 @@
                         <li style="color: #aaa; display: flex; justify-content: space-between;"><span>Sunday:</span> <span>9am - 8pm</span></li>
                     </ul>
                     <h4 style="margin-top: 30px;">Newsletter</h4>
-                    <form style="display: flex; gap: 10px;">
-                        <input type="email" placeholder="Email" style="padding: 10px; border-radius: 5px; border: none; width: 100%;">
-                        <button class="btn btn-primary" style="padding: 10px 20px;">Go</button>
+                    <form>
+                        <input type="email" placeholder="Email">
+                        <button class="btn btn-primary">Go</button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Trampoline Park & Ninja Warrior Course. All Rights Reserved.</p>
-                <p>Designed with ❤️ for Adventurers.</p>
+                <p>&copy; 2026 Trampoline Park & Ninja Warrior Course. All Rights Reserved. | Designed with ❤️ for Adventurers.</p>
             </div>
         </div>
     </footer>
 
     <!-- JS Files -->
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to Top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"></path></svg>
+    </button>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

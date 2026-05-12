@@ -18,41 +18,51 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
+
+        // Close menu when a link is clicked
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
     }
 
     // --- Dark Mode Toggle ---
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = document.querySelectorAll('.theme-toggle');
     const body = document.body;
 
     // Check saved theme
     if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark-mode');
-        if (themeToggle) themeToggle.innerHTML = '☀️';
+        themeToggles.forEach(btn => btn.innerHTML = '☀️');
     }
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
             const isDark = body.classList.contains('dark-mode');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            themeToggle.innerHTML = isDark ? '☀️' : '🌙';
+            themeToggles.forEach(b => b.innerHTML = isDark ? '☀️' : '🌙');
         });
-    }
+    });
 
     // --- RTL Toggle ---
-    const rtlToggle = document.getElementById('rtl-toggle');
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', () => {
+    const rtlToggles = document.querySelectorAll('.rtl-toggle');
+    
+    // Check saved direction
+    const savedDir = localStorage.getItem('dir') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+
+    rtlToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
             const currentDir = document.documentElement.getAttribute('dir');
             const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
             document.documentElement.setAttribute('dir', newDir);
             localStorage.setItem('dir', newDir);
         });
-    }
-
-    // Check saved direction
-    const savedDir = localStorage.getItem('dir') || 'ltr';
-    document.documentElement.setAttribute('dir', savedDir);
+    });
 
     // --- Scroll Reveal Animations ---
     const revealElements = document.querySelectorAll('.reveal');
@@ -121,5 +131,24 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }, 5000);
+    }
+    // --- Back to Top Button ---
+    const backToTop = document.querySelector('.back-to-top');
+    
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     }
 });

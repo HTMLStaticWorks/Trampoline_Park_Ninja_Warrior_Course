@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Trampoline Park & Ninja Warrior Course</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="description" content="Learn about our journey, mission, and the expert team behind the ultimate adventure park.">
     
     <!-- Google Fonts -->
@@ -16,7 +17,7 @@
     
     <style>
         .hero-about {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1551632432-c735e8299bc1?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/images/about-hero.png') center/cover no-repeat;
             height: 60vh;
         }
 
@@ -85,7 +86,13 @@
         .team-member {
             position: relative;
             overflow: hidden;
-            border-radius: 20px;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
         }
 
         .team-info {
@@ -102,6 +109,25 @@
 
         .team-member:hover .team-info {
             bottom: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-item::after {
+                left: 19px;
+            }
+            .left { left: 0; }
+            .right { left: 0%; }
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -127,13 +153,24 @@
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="courses.html">Courses</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li class="mobile-only-nav">
+                        <div class="mobile-nav-actions">
+                            <button class="theme-switch theme-toggle">🌙</button>
+                            <button class="theme-switch rtl-toggle">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17H4l4-4"></path><path d="M4 7h16l-4 4"></path></svg>
+                            </button>
+                            <a href="login.html" class="btn btn-primary">Login</a>
+                        </div>
+                    </li>
                 </ul>
                 <div class="nav-actions">
-                    <button id="theme-toggle" class="theme-switch">🌙</button>
-                    <button id="rtl-toggle" class="theme-switch">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17H4l4-4"></path><path d="M4 7h16l-4 4"></path></svg>
-                    </button>
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <div class="nav-buttons-group">
+                        <button class="theme-switch theme-toggle">🌙</button>
+                        <button class="theme-switch rtl-toggle">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17H4l4-4"></path><path d="M4 7h16l-4 4"></path></svg>
+                        </button>
+                        <a href="login.html" class="btn btn-primary">Login</a>
+                    </div>
                     <div class="hamburger">
                         <span></span>
                         <span></span>
@@ -212,30 +249,30 @@
                 <h2>Meet the Experts</h2>
                 <p>Our certified trainers are here to help you master every obstacle.</p>
             </div>
-            <div class="card-grid grid-4">
-                <div class="team-member reveal">
-                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=600&auto=format&fit=crop" alt="Trainer">
+            <div class="card-grid grid-4" style="gap: 0;">
+                <div class="team-member reveal" style="border-radius: 0;">
+                    <img src="assets/images/Alex The Flash.png" alt="Alex The Flash">
                     <div class="team-info">
                         <h3>Alex "The Flash"</h3>
                         <p>Head Ninja Trainer</p>
                     </div>
                 </div>
-                <div class="team-member reveal">
-                    <img src="https://images.unsplash.com/photo-1548690312-e3b507d17a4d?q=80&w=600&auto=format&fit=crop" alt="Trainer">
+                <div class="team-member reveal" style="border-radius: 0;">
+                    <img src="assets/images/ninja-courses.png" alt="Ninja Course">
                     <div class="team-info">
-                        <h3>Sarah Sky</h3>
-                        <p>Trampoline Expert</p>
+                        <h3>Ninja Course</h3>
+                        <p>Obstacle Mastery</p>
                     </div>
                 </div>
-                <div class="team-member reveal">
-                    <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fe?q=80&w=600&auto=format&fit=crop" alt="Trainer">
+                <div class="team-member reveal" style="border-radius: 0;">
+                    <img src="assets/images/Marcus Bolt.png" alt="Marcus Bolt">
                     <div class="team-info">
                         <h3>Marcus Bolt</h3>
                         <p>Agility Coach</p>
                     </div>
                 </div>
-                <div class="team-member reveal">
-                    <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=600&auto=format&fit=crop" alt="Trainer">
+                <div class="team-member reveal" style="border-radius: 0;">
+                    <img src="assets/images/Elena Rogue.png" alt="Elena Rogue">
                     <div class="team-info">
                         <h3>Elena Rogue</h3>
                         <p>Safety Director</p>
@@ -245,33 +282,66 @@
         </div>
     </section>
 
-    <!-- 5. Park Facilities Overview -->
-    <section class="section-padding" style="background: #f0f0f0;">
+    <!-- 5. Safety Standards (Non-Card Section) -->
+    <section class="section-padding about-safety-section" style="background: #0a0a0a; color: white;">
         <div class="container">
-            <div class="section-title">
-                <h2>World-Class Facilities</h2>
-                <p>Everything you need for an elite adventure experience.</p>
-            </div>
-            <div class="card-grid grid-4">
-                <div class="card reveal" style="padding: 40px; text-align: center;">
-                    <div style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 20px;">🏢</div>
-                    <h3>20k Sq Ft Arena</h3>
-                    <p>Massive space for limitless jumping and training.</p>
+            <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
+                <div class="reveal">
+                    <span style="color: var(--primary-orange); font-weight: 800; letter-spacing: 2px;">SAFETY FIRST</span>
+                    <h2 style="font-size: 3rem; margin: 20px 0; color: white;">Elite Protection <br><span
+                            style="color: var(--primary-blue);">Systems.</span></h2>
+                    <p style="color: #aaa; margin-bottom: 30px;">Your safety is our absolute priority. We utilize the
+                        world's most advanced safety technology and rigorous daily inspections to ensure a worry-free
+                        experience.</p>
+
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 30px;">
+                            <div
+                                style="background: var(--primary-blue); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">
+                                ✓</div>
+                            <div>
+                                <h4 style="color: white; margin-bottom: 8px; font-size: 1.2rem;">Double-Layer Airbags</h4>
+                                <p style="color: #888; font-size: 1rem; line-height: 1.6;">State-of-the-art impact
+                                    absorption systems in all high-altitude zones to prevent injuries.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 30px;">
+                            <div
+                                style="background: var(--primary-blue); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">
+                                ✓</div>
+                            <div>
+                                <h4 style="color: white; margin-bottom: 8px; font-size: 1.2rem;">Certified Jump Masters
+                                </h4>
+                                <p style="color: #888; font-size: 1rem; line-height: 1.6;">Every session is supervised by
+                                    ASTM-certified safety professionals trained in first aid.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px;">
+                            <div
+                                style="background: var(--primary-blue); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">
+                                ✓</div>
+                            <div>
+                                <h4 style="color: white; margin-bottom: 8px; font-size: 1.2rem;">Antimicrobial Tech</h4>
+                                <p style="color: #888; font-size: 1rem; line-height: 1.6;">All equipment is treated with
+                                    long-lasting hospital-grade sanitation coatings for maximum hygiene.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="card reveal" style="padding: 40px; text-align: center;">
-                    <div style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 20px;">☕</div>
-                    <h3>Warrior Cafe</h3>
-                    <p>High-protein snacks and premium coffee for parents.</p>
-                </div>
-                <div class="card reveal" style="padding: 40px; text-align: center;">
-                    <div style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 20px;">🚿</div>
-                    <h3>Pro Lockers</h3>
-                    <p>Secure storage and clean shower facilities.</p>
-                </div>
-                <div class="card reveal" style="padding: 40px; text-align: center;">
-                    <div style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 20px;">🛍️</div>
-                    <h3>Ninja Shop</h3>
-                    <p>Get the official gear and safety grip socks.</p>
+
+                <div class="reveal">
+                    <div style="position: relative; border-radius: 40px; overflow: hidden; height: 600px;">
+                        <img src="assets/images/Foam Pit Arena.png" alt="Safety Standards"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <div
+                            style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                        </div>
+                        <div style="position: absolute; bottom: 40px; left: 40px; right: 40px;">
+                            <h3 style="color: white; margin-bottom: 10px; font-size: 1.8rem;">100% Daily Inspections</h3>
+                            <p style="color: #ccc; font-size: 1rem;">Every spring and safety net is checked before we
+                                open our doors.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -292,10 +362,18 @@
                     </div>
                     <p style="color: #aaa; margin-bottom: 25px;">The world's premier destination for family fun, fitness, and elite ninja obstacle training. Experience the adventure of a lifetime.</p>
                     <div class="social-icons">
-                        <a href="#">F</a>
-                        <a href="#">I</a>
-                        <a href="#">X</a>
-                        <a href="#">Y</a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2C5.12 19.54 12 19.54 12 19.54s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 2.78 2.78 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                        <a href="#" aria-label="X">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733-16z"></path><path d="M4 20l6.768-6.768m2.464-2.464l6.768-6.768"></path></svg>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -306,7 +384,6 @@
                         <li><a href="services.html">Services</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="courses.html">Courses</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -326,20 +403,23 @@
                         <li style="color: #aaa; display: flex; justify-content: space-between;"><span>Sunday:</span> <span>9am - 8pm</span></li>
                     </ul>
                     <h4 style="margin-top: 30px;">Newsletter</h4>
-                    <form style="display: flex; gap: 10px;">
-                        <input type="email" placeholder="Email" style="padding: 10px; border-radius: 5px; border: none; width: 100%;">
-                        <button class="btn btn-primary" style="padding: 10px 20px;">Go</button>
+                    <form>
+                        <input type="email" placeholder="Email">
+                        <button class="btn btn-primary">Go</button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Trampoline Park & Ninja Warrior Course. All Rights Reserved.</p>
-                <p>Designed with ❤️ for Adventurers.</p>
+                <p>&copy; 2026 Trampoline Park & Ninja Warrior Course. All Rights Reserved. | Designed with ❤️ for Adventurers.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JS Files -->
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to Top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"></path></svg>
+    </button>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>
