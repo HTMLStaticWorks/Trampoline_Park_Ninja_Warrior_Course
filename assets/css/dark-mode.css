@@ -1,0 +1,41 @@
+/* Dark Mode Overrides */
+body.dark-mode {
+    --bg-light: #0a0a0a;
+    --text-dark: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .card {
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark-mode .card-body p {
+    color: #bbb;
+}
+
+body.dark-mode .section-title h2 {
+    color: var(--text-white);
+}
+
+body.dark-mode .navbar .nav-links a {
+    color: var(--text-white);
+}
+
+body.dark-mode header.sticky {
+    background: rgba(0,0,0,0.95);
+}
+
+body.dark-mode .btn-outline {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+body.dark-mode .btn-outline:hover {
+    background: var(--primary-blue);
+    color: var(--bg-dark);
+}
+
+body.dark-mode .footer-bottom {
+    border-top-color: rgba(255,255,255,0.05);
+}

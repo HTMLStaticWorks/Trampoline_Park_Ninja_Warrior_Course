@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Trampoline Park & Ninja Warrior Course</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .coming-soon-container {
+            max-width: 800px;
+            padding: 40px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            min-width: 120px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .countdown-item span {
+            display: block;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        .countdown-item label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .notify-form {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
+        .notify-form input {
+            flex: 1;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            color: white;
+        }
+
+        /* Animation */
+        .glow-orb {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(50px);
+            animation: float 10s infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%); }
+            100% { transform: translate(50%, 50%); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-orb" style="top: 20%; left: 20%;"></div>
+    <div class="glow-orb" style="bottom: 20%; right: 20%; background: radial-gradient(circle, rgba(255, 95, 0, 0.1) 0%, transparent 70%);"></div>
+
+    <div class="coming-soon-container">
+        <h2 style="color: var(--primary-orange); letter-spacing: 5px; margin-bottom: 20px;">GET READY</h2>
+        <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 20px;">OUR NEW ARENA <br>IS OPENING SOON</h1>
+        <p style="color: #aaa; font-size: 1.1rem;">We're putting the finishing touches on the world's most advanced adventure park.</p>
+
+        <div class="countdown">
+            <div class="countdown-item">
+                <span id="days">24</span>
+                <label>Days</label>
+            </div>
+            <div class="countdown-item">
+                <span id="hours">12</span>
+                <label>Hours</label>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">45</span>
+                <label>Minutes</label>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">30</span>
+                <label>Seconds</label>
+            </div>
+        </div>
+
+        <form class="notify-form">
+            <input type="email" placeholder="Enter your email address">
+            <button class="btn btn-primary">Notify Me</button>
+        </form>
+
+        <div class="social-icons" style="justify-content: center;">
+            <a href="#">F</a>
+            <a href="#">I</a>
+            <a href="#">X</a>
+            <a href="#">Y</a>
+        </div>
+    </div>
+
+    <script>
+        // Simple countdown logic
+        let d = 24, h = 12, m = 45, s = 30;
+        setInterval(() => {
+            s--;
+            if(s < 0) { s = 59; m--; }
+            if(m < 0) { m = 59; h--; }
+            if(h < 0) { h = 23; d--; }
+            document.getElementById('days').innerText = d;
+            document.getElementById('hours').innerText = h;
+            document.getElementById('minutes').innerText = m;
+            document.getElementById('seconds').innerText = s;
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Trampoline Park & Ninja Warrior Course</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&family=Roboto:wght@900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        body {
+            background: var(--bg-dark);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .error-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-code {
+            font-size: 15rem;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1;
+            background: linear-gradient(to bottom, var(--primary-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        .error-msg {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .trampoline-svg {
+            width: 200px;
+            margin: 0 auto 40px;
+            opacity: 0.5;
+        }
+
+        .bg-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 50px);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-lines"></div>
+
+    <div class="error-container">
+        <div class="trampoline-svg">
+            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="50" width="160" height="10" rx="5" fill="var(--primary-orange)" />
+                <path d="M40 60 L40 90 M80 60 L80 90 M120 60 L120 90 M160 60 L160 90" stroke="white" stroke-width="4" />
+                <path d="M20 50 Q100 0 180 50" fill="transparent" stroke="var(--primary-blue)" stroke-width="4" />
+            </svg>
+        </div>
+        <div class="error-code">404</div>
+        <h2 class="error-msg">OOPS! YOU BOUNCED TOO FAR.</h2>
+        <p style="color: #888; margin-bottom: 40px;">The page you're looking for has left the arena.</p>
+        <a href="index.html" class="btn btn-primary">Back to Arena (Home)</a>
+    </div>
+
+</body>
+</html>
