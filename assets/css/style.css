@@ -1070,6 +1070,10 @@ body {
     .live-arena-section .counter {
         display: inline-block;
     }
+
+    .live-arena-section div[style*="display: flex"] {
+        justify-content: center !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1081,7 +1085,7 @@ body {
         font-size: 3.5rem !important;
     }
 
-    .live-arena-section span {
+    .live-arena-section span:not([style*="font-size: 2rem"]) {
         font-size: 0.85rem !important;
     }
 }
