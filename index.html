@@ -91,6 +91,16 @@
         /* Alignment Utilities */
         .justify-center { justify-content: center; }
         .gap-20 { gap: 20px; }
+
+        /* Bright Mode Hero Text Visibility Fix */
+        body:not(.dark-mode) .hero-content h1 {
+            color: var(--text-dark) !important;
+            -webkit-text-fill-color: initial !important;
+            background: none !important;
+        }
+        body:not(.dark-mode) .hero-content p {
+            color: var(--text-dark) !important;
+        }
     </style>
 </head>
 <body>
